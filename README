@@ -19,7 +19,8 @@ Catalyst::Model::Filemaker - Catalyst model for Filemaker's XML services
     __PACKAGE__->config(
         host    => 'myhostname',
         user    => 'myusername',
-        pass    => 'mypassword'
+        pass    => 'mypassword',
+        db      => 'mydb.fpX'
     );
     
     1;
