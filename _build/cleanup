@@ -1,0 +1,6 @@
+do{ my $x = {
+       'Catalyst-Helper-Model-Filemaker-*' => 1,
+       'Catalyst-Model-Filemaker-*' => 1,
+       'blib' => 1
+     };
+$x; }
