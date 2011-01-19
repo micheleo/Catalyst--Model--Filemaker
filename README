@@ -1,94 +1,133 @@
-NAME
-    Catalyst::Model::S3 - Catalyst model for Amazon's S3 web service
+=head1 NAME
 
-SYNOPSIS
-        # Use the helper to add an S3 model to your application...
-        script/myapp_create.pl create model S3 S3
-        
+Catalyst::Model::Filemaker - Catalyst model for Filemaker's XML services
+
+
+=head1 SYNOPSIS
+
+    # Use the helper to add a L<Net::FileMaker::XML> model to your application...
+    script/myapp_create.pl create model Filemaker Filemaker 'host' 'username' 'password' 
     
-    # lib/MyApp/Model/S3.pm
-        
-    package MyApp::Model::S3;
-        
-    use base qw/ Catalyst::Model::S3 /;
-        
+    or
+    
+    # lib/MyApp/Model/Filemaker.pm
+    
+    package MyApp::Model::Filemaker;
+    
+    use base qw/ Catalyst::Model::Filemaker /;
+    
     __PACKAGE__->config(
-            aws_access_key_id     => 'your_access_key_id',
-            aws_secret_access_key => 'your_secret_access_key',
-            secure                => 0,  # optional: default 0  (false)
-            timeout               => 30, # optional: default 30 (seconds)
-        );
-        
+        host    => 'myhostname',
+        user    => 'myusername',
+        pass    => 'mypassword'
+    );
+    
     1;
-        
+    
     
     # In a controller...
-        my $s3 = $c->model('S3');
-        print ref($s3);  # Net::Amazon::S3
+    my $fm = $c->model('Filemaker');
+    print ref($fm);  # Net::FileMaker::XML
 
-DESCRIPTION
-    This is a Catalyst model class that interfaces with Amazon's Simple
-    Storage Service. See the Net::Amazon::S3 documentation for a description
-    of the methods available. For more on S3 visit:
-    <http://aws.amazon.com/s3>
 
-METHODS
-  ->new()
-    Instantiate a new Net::Amazon::S3 Model. See Net::Amazon::S3's new
-    method for the options available.
+=head1 DESCRIPTION
 
-  ACCEPT_CONTEXT
-    Return the Net::Amazon::S3 object. Called automatically via
-    "$c->model('S3');"
+This is a L<Catalyst> model class that interfaces with Filemaker's XML service. 
+See the L<Net::FileMaker::XML> documentation for a description of the
+methods available.
 
-SEE ALSO
-    Catalyst, Catalyst::Helper::Model::S3, Net::Amazon::S3
 
-DEPENDENCIES
-    *   Carp
+=head1 METHODS
 
-    *   Catalyst::Model
+=head2 ->new()
 
-    *   Catalyst::Utils
+Instantiate a new L<Net::FileMaker::XML> Model. See
+L<Net::FileMaker::XML's new method|Net::FileMaker::XML/new> for the options available.
 
-    *   Class::C3
+=cut
 
-    *   Net::Amazon::Simple
 
-BUGS
-    Please report any bugs or feature requests to "bug-catalyst-model-s3 at
-    rt.cpan.org", or through the web interface at
-    <http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Catalyst-Model-S3>.
+__END__
 
-SUPPORT
-    You can find documentation for this module with the perldoc command.
+=head1 SEE ALSO
 
-        perldoc Catalyst::Model::S3
+L<Catalyst>, L<Catalyst::Helper::Model::Filemaker>, L<Net::FileMaker::XML>
 
-    You may also look for information at:
 
-    *   Catalyst::Model::S3
+=head1 DEPENDENCIES
 
-        <http://perlprogrammer.co.uk/modules/Catalyst::Model::S3/>
+=over
 
-    *   AnnoCPAN: Annotated CPAN documentation
+=item
 
-        <http://annocpan.org/dist/Catalyst-Model-S3/>
+L<Carp>
 
-    *   RT: CPAN's request tracker
+=item
 
-        <http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Catalyst-Model-S3>
+L<Catalyst::Model>
 
-    *   Search CPAN
+=item
 
-        <http://search.cpan.org/dist/Catalyst-Model-S3/>
+L<Catalyst::Utils>
 
-AUTHOR
-    Dave Cardwell <dcardwell@cpan.org>
+=item
 
-COPYRIGHT AND LICENSE
-    Copyright (c) 2007 Dave Cardwell. All rights reserved.
+L<Class::C3>
 
-    This module is free software; you can redistribute it and/or modify it
-    under the same terms as Perl itself. See perlartistic.
+=item
 
+L<Net::FileMaker::XML::ResultSet>
+
+=back
+
+
+=head1 BUGS
+
+Please report any bugs or feature requests to
+C<bug-catalyst-model-filemaker at rt.cpan.org>, or through the web interface at
+L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Catalyst-Model-Filemaker>.
+
+
+=head1 SUPPORT
+
+You can find documentation for this module with the perldoc command.
+
+    perldoc Catalyst::Model::Filemaker
+
+You may also look for information at:
+
+=over 4
+
+=item * Catalyst::Model::Filemaker
+
+L<http://perlprogrammer.co.uk/modules/Catalyst::Model::Filemaker/>
+
+=item * AnnoCPAN: Annotated CPAN documentation
+
+L<http://annocpan.org/dist/Catalyst-Model-Filemaker/>
+
+=item * RT: CPAN's request tracker
+
+L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Catalyst-Model-Filemaker>
+
+=item * Search CPAN
+
+L<http://search.cpan.org/dist/Catalyst-Model-Filemaker/>
+
+=back
+
+
+=head1 AUTHOR
+
+ <micheleo@cpan.org>
+
+
+=head1 COPYRIGHT AND LICENSE
+
+Copyright (c) 2011 Michele Ongaro. All rights reserved.
+
+This module is free software; you can redistribute it and/or modify it under
+the same terms as Perl itself. See L<perlartistic>.
+
+
+=cut
