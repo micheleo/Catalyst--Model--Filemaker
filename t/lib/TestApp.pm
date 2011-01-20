@@ -3,7 +3,7 @@ package # hide from PAUSE
 
 use strict;
 use warnings;
-use LWP::UserAgent;
+
 use Catalyst;
 
 __PACKAGE__->config(
