@@ -41,16 +41,16 @@ sub mk_compclass {
     
     # Extract the arguments...
     foreach (@options) {
-        if ( /^host=(.+)$/ ) {
+        if ( /^host=(.+)$/x ) {
             $helper->{host} = $1;
         }
-        elsif ( /^user=(.+)$/ ) {
+        elsif ( /^user=(.+)$/x ) {
             $helper->{user} = $1;
         }
-        elsif ( /^pass=(.+)$/ ) {
+        elsif ( /^pass=(.+)$/x ) {
             $helper->{pass} = $1;
         }
-        elsif ( /^pass=(.+)$/ ) {
+        elsif ( /^pass=(.+)$/x ) {
             $helper->{db} = $1;
         }        
     }
@@ -63,6 +63,7 @@ sub mk_compclass {
     );
     
     $helper->render_file( 'filemakerclass', $helper->{file} );
+    return;
 }
 
 
