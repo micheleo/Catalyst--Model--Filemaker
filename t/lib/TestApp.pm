@@ -3,14 +3,17 @@ package # hide from PAUSE
 
 use strict;
 use warnings;
-
+use LWP::UserAgent;
 use Catalyst;
 
 __PACKAGE__->config(
     name        => 'TestApp',
-    'Model::S3' => {
-        aws_access_key_id     => 'fake key',
-        aws_secret_access_key => 'fake secret'
+    'Model::Filemaker' => {
+        host  => 'somehost',
+        user  => 'someuser',
+        pass  => 'somepass',
+        db    => 'somedb'
+
     },
 );
 

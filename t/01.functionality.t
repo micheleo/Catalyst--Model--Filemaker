@@ -11,14 +11,13 @@ use lib qw( t/lib );
 use_ok('TestApp');
 
 
-# Check that the S3 model returns a valid Net::Amazon::S3 object...
-my $s3 = TestApp->model('S3');
-isa_ok( $s3, 'Net::Amazon::S3' );
-can_ok( $s3, 'buckets' );
+# Check that the Filemaker model returns a valid Net::Filemaker::XML object...
+my $fm = TestApp->model('Filemaker');
+isa_ok( $fm, 'Net::FileMaker::XML::Database' );
+can_ok( $fm, 'dbnames' );
 
 
-# If you've already tested and installed Net::Amazon::S3, there is no reason
-# to run tests against the S3 server again.
+# no more tests needed as you've already installed the N::F::X module
 
 
 1;

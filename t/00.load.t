@@ -5,7 +5,7 @@ use warnings;
 
 use Test::More tests => 1;
 
-use_ok( 'Catalyst::Model::S3' );
+use_ok( 'Catalyst::Model::Filemaker' );
 
-diag( 'Testing Catalyst::Model::S3 '
-            . $Catalyst::Model::S3::VERSION );
+diag( 'Testing Catalyst::Model::Filemaker '
+            . $Catalyst::Model::Filemaker::VERSION );
