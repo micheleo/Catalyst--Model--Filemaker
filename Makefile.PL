@@ -13,6 +13,7 @@ WriteMakefile(
     
     PREREQ_PM => {
     'Test::More'    => 0,
+    'Catalyst::Runtime'     => '5.80005',
     'Net::Filemaker::XML::ResultSet'       => 0,
     'Carp'      => 0,
     },

@@ -20,7 +20,7 @@ Catalyst::Model::Filemaker - Catalyst model for Filemaker's XML services
 =head1 SYNOPSIS
 
     # Use the helper to add a L<Net::FileMaker::XML> model to your application...
-    script/myapp_create.pl create model Filemaker Filemaker 'host' 'username' 'password' 
+    script/myapp_create.pl create model Filemaker Filemaker host=myhost user=myuser pass=mypassword db=mydb 
     
     or
     
@@ -126,10 +126,6 @@ L<Catalyst::Utils>
 
 =item
 
-L<Class::C3>
-
-=item
-
 L<Net::FileMaker::XML::ResultSet>
 
 =back
@@ -154,7 +150,7 @@ You may also look for information at:
 
 =item * Catalyst::Model::Filemaker
 
-L<http://perlprogrammer.co.uk/modules/Catalyst::Model::Filemaker/>
+L<https://github.com/micheleo/Catalyst--Model--Filemaker>
 
 =item * AnnoCPAN: Annotated CPAN documentation
 

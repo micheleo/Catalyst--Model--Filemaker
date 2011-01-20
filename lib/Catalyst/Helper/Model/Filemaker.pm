@@ -15,7 +15,7 @@ Catalyst::Helper::Model::Filemaker - Helper for Filemaker Catalyst models
 
 =head1 SYNOPSIS
 
-    script/myapp_create.pl model ModelName Filemaker [ host=myhost user=myuser pass=mypass ]
+    script/myapp_create.pl model ModelName Filemaker host=myhost user=myuser pass=mypass db=mydb
 
 
 =head1 DESCRIPTION
@@ -90,7 +90,7 @@ You may also look for information at:
 
 =item * Catalyst::Model::Filemaker
 
-L<http://perlprogrammer.co.uk/module/Catalyst::Model::Filemaker/>
+L<https://github.com/micheleo/Catalyst--Model--Filemaker/>
 
 =item * AnnoCPAN: Annotated CPAN documentation
 
