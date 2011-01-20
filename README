@@ -1,134 +1,95 @@
-=head1 NAME
+NAME
+    Catalyst::Model::Filemaker - Catalyst model for Filemaker's XML services
 
-Catalyst::Model::Filemaker - Catalyst model for Filemaker's XML services
-
-
-=head1 SYNOPSIS
-
-    # Use the helper to add a L<Net::FileMaker::XML> model to your application...
-    script/myapp_create.pl create model Filemaker Filemaker host=myhost user=myuser pass=mypassword db=mydb 
-    
+SYNOPSIS
+        # Use the helper to add a L<Net::FileMaker::XML> model to your application...
+        script/myapp_create.pl create model Filemaker Filemaker host=myhost user=myuser pass=mypassword db=mydb 
+        
     or
-    
+        
     # lib/MyApp/Model/Filemaker.pm
-    
+        
     package MyApp::Model::Filemaker;
-    
+        
     use base qw/ Catalyst::Model::Filemaker /;
-    
+        
     __PACKAGE__->config(
-        host    => 'myhostname',
-        user    => 'myusername',
-        pass    => 'mypassword',
-        db      => 'mydb.fpX'
-    );
-    
+            host    => 'myhostname',
+            user    => 'myusername',
+            pass    => 'mypassword',
+            db      => 'mydb.fpX'
+        );
+        
     1;
-    
+        
     
     # In a controller...
-    my $fm = $c->model('Filemaker');
-    print ref($fm);  # Net::FileMaker::XML
+        my $fm = $c->model('Filemaker');
+        print ref($fm);  # Net::FileMaker::XML
 
+DESCRIPTION
+    This is a Catalyst model class that interfaces with Filemaker's XML
+    service. See the Net::FileMaker::XML documentation for a description of
+    the methods available.
 
-=head1 DESCRIPTION
+METHODS
+  ->new()
+    Instantiate a new Net::FileMaker::XML Model. See Net::FileMaker::XML's
+    new method for the options available.
 
-This is a L<Catalyst> model class that interfaces with Filemaker's XML service. 
-See the L<Net::FileMaker::XML> documentation for a description of the
-methods available.
+  ACCEPT_CONTEXT
+    Return the Net::FileMaker::XML object. Called automatically via
+    "$c->model('Filemaker');"
 
+SEE ALSO
+    Catalyst, Catalyst::Helper::Model::Filemaker, Net::FileMaker::XML
 
-=head1 METHODS
+DEPENDENCIES
+    *   Carp
 
-=head2 ->new()
+    *   Catalyst::Model
 
-Instantiate a new L<Net::FileMaker::XML> Model. See
-L<Net::FileMaker::XML's new method|Net::FileMaker::XML/new> for the options available.
+    *   Catalyst::Utils
 
-=cut
+    *   Net::FileMaker::XML::ResultSet
 
+BUGS
+    Please report any bugs or feature requests to
+    "bug-catalyst-model-filemaker at rt.cpan.org", or through the web
+    interface at
+    <http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Catalyst-Model-Filemaker
+    >.
 
-__END__
+SUPPORT
+    You can find documentation for this module with the perldoc command.
 
-=head1 SEE ALSO
+        perldoc Catalyst::Model::Filemaker
 
-L<Catalyst>, L<Catalyst::Helper::Model::Filemaker>, L<Net::FileMaker::XML>
+    You may also look for information at:
 
+    *   Catalyst::Model::Filemaker
 
-=head1 DEPENDENCIES
+        <https://github.com/micheleo/Catalyst--Model--Filemaker>
 
-=over
+    *   AnnoCPAN: Annotated CPAN documentation
 
-=item
+        <http://annocpan.org/dist/Catalyst-Model-Filemaker/>
 
-L<Carp>
+    *   RT: CPAN's request tracker
 
-=item
+        <http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Catalyst-Model-Filem
+        aker>
 
-L<Catalyst::Model>
+    *   Search CPAN
 
-=item
+        <http://search.cpan.org/dist/Catalyst-Model-Filemaker/>
 
-L<Catalyst::Utils>
+AUTHOR
+     <micheleo@cpan.org>
 
-=item
+COPYRIGHT AND LICENSE
+    Copyright (c) 2011 Michele Ongaro. All rights reserved.
 
-L<Class::C3>
+    This module is free software; you can redistribute it and/or modify it
+    under the same terms as Perl itself. See perlartistic.
 
-=item
-
-L<Net::FileMaker::XML::ResultSet>
-
-=back
-
-
-=head1 BUGS
-
-Please report any bugs or feature requests to
-C<bug-catalyst-model-filemaker at rt.cpan.org>, or through the web interface at
-L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Catalyst-Model-Filemaker>.
-
-
-=head1 SUPPORT
-
-You can find documentation for this module with the perldoc command.
-
-    perldoc Catalyst::Model::Filemaker
-
-You may also look for information at:
-
-=over 4
-
-=item * Catalyst::Model::Filemaker
-
-L<https://github.com/micheleo/Catalyst--Model--Filemaker/>
-
-=item * AnnoCPAN: Annotated CPAN documentation
-
-L<http://annocpan.org/dist/Catalyst-Model-Filemaker/>
-
-=item * RT: CPAN's request tracker
-
-L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Catalyst-Model-Filemaker>
-
-=item * Search CPAN
-
-L<http://search.cpan.org/dist/Catalyst-Model-Filemaker/>
-
-=back
-
-
-=head1 AUTHOR
-
- <micheleo@cpan.org>
-
-
-=head1 COPYRIGHT AND LICENSE
-
-Copyright (c) 2011 Michele Ongaro. All rights reserved.
-
-This module is free software; you can redistribute it and/or modify it under
-the same terms as Perl itself. See L<perlartistic>.
-
-
-=cut
