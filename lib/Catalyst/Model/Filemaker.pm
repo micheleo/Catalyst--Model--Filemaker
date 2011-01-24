@@ -19,8 +19,9 @@ Catalyst::Model::Filemaker - Catalyst model for Filemaker's XML services
 
 =head1 SYNOPSIS
 
-    # Use the helper to add a L<Net::FileMaker::XML> model to your application...
-    script/myapp_create.pl create model Filemaker Filemaker host=myhost user=myuser pass=mypassword db=mydb 
+    # Use the helper to add a L<Net::FileMaker::XML> model to your application
+    script/myapp_create.pl create model Filemaker Filemaker host=myhost \ 
+    user=myuser pass=mypassword db=mydb 
     
     or
     
@@ -47,7 +48,7 @@ Catalyst::Model::Filemaker - Catalyst model for Filemaker's XML services
 
 =head1 DESCRIPTION
 
-This is a L<Catalyst> model class that interfaces with Filemaker's XML service. 
+This is a L<Catalyst> model that interfaces with Filemaker's XML service. 
 See the L<Net::FileMaker::XML> documentation for a description of the
 methods available.
 
@@ -56,8 +57,8 @@ methods available.
 
 =head2 ->new()
 
-Instantiate a new L<Net::FileMaker::XML> Model. See
-L<Net::FileMaker::XML's new method|Net::FileMaker::XML/new> for the options available.
+Instantiate a new L<Net::FileMaker::XML> Model. See L<Net::FileMaker::XML's 
+new method|Net::FileMaker::XML/new> for the options available.
 
 =cut
 
@@ -79,7 +80,11 @@ sub new {
     
    my $fms = Net::FileMaker::XML->new(host => $self->{host});
 
-    my $fmdb = $fms->database(db => $self->{db}, user => $self->{user}, pass => $self->{pass});
+    my $fmdb = $fms->database(
+        db => $self->{db}, 
+        user => $self->{user}, 
+        pass => $self->{pass}
+    );
     
     # Instantiating a Net::FileMaker::XML obj
     $self->{'fm'} = $fmdb;

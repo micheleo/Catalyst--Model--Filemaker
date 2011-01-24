@@ -15,24 +15,26 @@ Catalyst::Helper::Model::Filemaker - Helper for Filemaker Catalyst models
 
 =head1 SYNOPSIS
 
-    script/myapp_create.pl model ModelName Filemaker host=myhost user=myuser pass=mypass db=mydb
+    script/myapp_create.pl model ModelName Filemaker host=myhost user=myuser \
+    pass=mypass db=mydb
 
 
 =head1 DESCRIPTION
 
-Use this module to set up a new L<Catalyst::Model::Filemaker> model for your Catalyst
-application.
+Use this module to set up a new L<Catalyst::Model::Filemaker> model for your 
+Catalyst application.
 
 =head2 Arguments
 
-    ModelName is the short name for the Model class being generated (eg. "Filemaker")
+    ModelName is the short name for the Model class being generated 
+    (eg. "Filemaker")
 
 =head1 METHODS
 
 =head2 mk_compclass
 
-This method takes the given arguments and generates a Catalyst::Model::Filemaker
-model for your application.
+This method takes the given arguments and generates a 
+Catalyst::Model::Filemaker model for your application.
 
 =cut
 
@@ -75,8 +77,8 @@ L<Catalyst>, L<Catalyst::Helper>, L<Catalyst::Model::Filemaker>
 =head1 BUGS
 
 Please report any bugs or feature requests to
-C<bug-catalyst-model-filemaker at rt.cpan.org>, or through the web interface at
-L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Catalyst-Model-Filemaker>.
+C<bug-catalyst-model-filemaker at rt.cpan.org>, or through the web interface 
+at L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Catalyst-Model-Filemaker>.
 
 
 =head1 SUPPORT
