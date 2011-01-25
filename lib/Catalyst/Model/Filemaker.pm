@@ -11,7 +11,6 @@ use Net::FileMaker::XML::ResultSet;
 
 our $VERSION = '0.01';
 
-
 =head1 NAME
 
 Catalyst::Model::Filemaker - Catalyst model for Filemaker's XML services
@@ -63,35 +62,34 @@ new method|Net::FileMaker::XML/new> for the options available.
 =cut
 
 sub new {
-    my $self  = shift->next::method(@_);
-    my $class = ref($self);
-    
-    my ( $c, $arg_ref ) = @_;
-    
-    # check configuration
-    croak "->config->{host} must be set for $class\n"
-        unless $self->{host};
-    croak "->config->{user} must be set for $class\n"
-        unless $self->{user};
-    croak "->config->{pass} must be set for $class\n"
-        unless $self->{pass};
-    croak "->config->{db} must be set for $class\n"
-        unless $self->{db};
-    
-   my $fms = Net::FileMaker::XML->new(host => $self->{host});
+	my $self  = shift->next::method(@_);
+	my $class = ref($self);
 
-    my $fmdb = $fms->database(
-        db => $self->{db}, 
-        user => $self->{user}, 
-        pass => $self->{pass}
-    );
-    
-    # Instantiating a Net::FileMaker::XML obj
-    $self->{'fm'} = $fmdb;
-    
-    return $self;
+	my ( $c, $arg_ref ) = @_;
+
+	# check configuration
+	croak "->config->{host} must be set for $class\n"
+	  unless $self->{host};
+	croak "->config->{user} must be set for $class\n"
+	  unless $self->{user};
+	croak "->config->{pass} must be set for $class\n"
+	  unless $self->{pass};
+	croak "->config->{db} must be set for $class\n"
+	  unless $self->{db};
+
+	my $fms = Net::FileMaker::XML->new( host => $self->{host} );
+
+	my $fmdb = $fms->database(
+		db   => $self->{db},
+		user => $self->{user},
+		pass => $self->{pass}
+	);
+
+	# Instantiating a Net::FileMaker::XML obj
+	$self->{'fm'} = $fmdb;
+
+	return $self;
 }
-
 
 =head2 ACCEPT_CONTEXT
 
@@ -101,11 +99,10 @@ C<$c-E<gt>model('Filemaker');>
 =cut
 
 sub ACCEPT_CONTEXT {
-    return shift->{'fm'};
+	return shift->{'fm'};
 }
 
-
-1; # End of the module code; everything from here is documentation...
+1;    # End of the module code; everything from here is documentation...
 __END__
 
 =head1 SEE ALSO

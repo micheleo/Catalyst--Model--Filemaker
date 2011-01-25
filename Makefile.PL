@@ -5,8 +5,8 @@ use ExtUtils::MakeMaker;
 WriteMakefile(
     NAME                => 'Catalyst::Model::Filemaker',
     AUTHOR              => q{Michele Ongaro <micheleo@cpan.org>},
-    VERSION_FROM        => 'lib/Catalyst/Model/FileMaker.pm',
-    ABSTRACT_FROM       => 'lib/Catalyst/Model/FileMaker.pm',
+    VERSION_FROM        => 'lib/Catalyst/Model/Filemaker.pm',
+    ABSTRACT_FROM       => 'lib/Catalyst/Model/Filemaker.pm',
     ($ExtUtils::MakeMaker::VERSION >= 6.3002
       ? ('LICENSE'=> 'perl')
       : ()),
@@ -14,7 +14,7 @@ WriteMakefile(
     PREREQ_PM => {
     'Test::More'    => 0,
     'Catalyst::Runtime'     => '5.80005',
-    'Net::Filemaker::XML::ResultSet'       => 0,
+    'Net::FileMaker::XML::ResultSet'       => 0,
     'Carp'      => 0,
     },
 

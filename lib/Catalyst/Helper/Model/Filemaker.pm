@@ -7,7 +7,6 @@ use Carp qw( croak );
 
 our $VERSION = '0.01';
 
-
 =head1 NAME
 
 Catalyst::Helper::Model::Filemaker - Helper for Filemaker Catalyst models
@@ -39,35 +38,33 @@ Catalyst::Model::Filemaker model for your application.
 =cut
 
 sub mk_compclass {
-    my ( $self, $helper, @options ) = @_;
-    
-    # Extract the arguments...
-    foreach (@options) {
-        if ( /^host=(.+)$/x ) {
-            $helper->{host} = $1;
-        }
-        elsif ( /^user=(.+)$/x ) {
-            $helper->{user} = $1;
-        }
-        elsif ( /^pass=(.+)$/x ) {
-            $helper->{pass} = $1;
-        }
-        elsif ( /^pass=(.+)$/x ) {
-            $helper->{db} = $1;
-        }        
-    }
-    
-    $helper->{config_encountered} = (
-        exists $helper->{host}
-     || exists $helper->{user}
-     || exists $helper->{pass}
-     || exists $helper->{db}     
-    );
-    
-    $helper->render_file( 'filemakerclass', $helper->{file} );
-    return;
-}
+	my ( $self, $helper, @options ) = @_;
 
+	# Extract the arguments...
+	foreach (@options) {
+		if (/^host=(.+)$/x) {
+			$helper->{host} = $1;
+		}
+		elsif (/^user=(.+)$/x) {
+			$helper->{user} = $1;
+		}
+		elsif (/^pass=(.+)$/x) {
+			$helper->{pass} = $1;
+		}
+		elsif (/^pass=(.+)$/x) {
+			$helper->{db} = $1;
+		}
+	}
+
+	$helper->{config_encountered} =
+	  (      exists $helper->{host}
+		  || exists $helper->{user}
+		  || exists $helper->{pass}
+		  || exists $helper->{db} );
+
+	$helper->render_file( 'filemakerclass', $helper->{file} );
+	return;
+}
 
 =head1 SEE ALSO
 
@@ -124,9 +121,9 @@ the same terms as Perl itself. See L<perlartistic>.
 
 =cut
 
-
 1;
 __DATA__
+
 =begin pod_to_ignore
 
 __filemakerclass__
